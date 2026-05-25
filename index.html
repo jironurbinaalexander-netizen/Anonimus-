@@ -1,188 +1,137 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anonymous Gaming</title>
+
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:Arial, Helvetica, sans-serif;
-    }body{
-    background: radial-gradient(circle at top, #1a1a2e, #0d0d14);
-    color:white;
-    overflow-x:hidden;
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0d0d14;
+    color: white;
 }
 
-/* particles */
-.particles{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size:40px 40px;
-    animation: move 20s linear infinite;
-    z-index:0;
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
 }
 
-@keyframes move{
-    from{transform:translateY(0px)}
-    to{transform:translateY(-200px)}
+.logo {
+    color: #b300ff;
+    font-weight: bold;
 }
 
-/* NAV */
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 30px;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
-    z-index:10;
+/* SEARCH */
+.search {
+    display: flex;
+    align-items: center;
+    background: #1a1a2e;
+    padding: 5px 10px;
+    border-radius: 8px;
 }
 
-.logo{
-    font-size:16px;
-    font-weight:bold;
-    letter-spacing:2px;
-    color:#b300ff;
-}
-
-nav a{
-    color:white;
-    margin:0 10px;
-    text-decoration:none;
-    font-size:14px;
-    opacity:0.8;
-}
-
-nav a:hover{
-    opacity:1;
-    color:#00e5ff;
-}
-
-/* search */
-.search{
-    display:flex;
-    align-items:center;
-    background:rgba(255,255,255,0.08);
-    padding:6px 10px;
-    border-radius:8px;
-}
-
-.search input{
-    background:none;
-    border:none;
-    outline:none;
-    color:white;
-    margin-left:8px;
+.search input {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
 }
 
 /* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position:relative;
-    z-index:1;
-    padding:20px;
+.hero {
+    text-align: center;
+    padding: 60px 20px;
 }
 
-.hero h1{
-    font-size:48px;
-    color:#ffffff;
+.hero h1 {
+    font-size: 40px;
 }
 
-.hero p{
-    opacity:0.7;
-    margin-top:10px;
+/* CATÁLOGO */
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
 }
 
-.buttons{
-    margin-top:20px;
+.game {
+    background: #1a1a2e;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-.btn{
-    padding:10px 20px;
-    margin:5px;
-    border:none;
-    cursor:pointer;
-    border-radius:8px;
-    font-weight:bold;
+.game:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #b300ff;
 }
 
-.primary{
-    background:#b300ff;
-    color:white;
+/* OFERTA */
+.oferta {
+    color: #00e5ff;
+    font-size: 12px;
 }
-
-.secondary{
-    background:#00e5ff;
-    color:black;
-}
-
-/* FEATURED */
-.featured{
-    padding:60px 20px;
-    position:relative;
-    z-index:1;
-}
-
-.game-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:10px;
-    padding:20px;
-    max-width:600px;
-    margin:auto;
-    text-align:left;
-}
-
-.game-card img{
-    width:100%;
-    border-radius:10px;
-    margin-bottom:10px;
-}
-
-.tag{
-    color:#00e5ff;
-    font-size:12px;
-}
-
 </style>
 </head>
-<body><div class="particles"></div><header>
-    <div class="logo">AG</div><nav>
-    <a href="#">Inicio</a>
-    <a href="#">Juegos</a>
-    <a href="#">Ofertas</a>
-    <a href="#">Contacto</a>
-</nav>
+
+<body>
+
+<header>
+<div class="logo">Anonymous Gaming</div>
 
 <div class="search">
-    🔍 <input type="text" placeholder="Buscar juegos..." />
+🔍 <input type="text" id="buscador" placeholder="Buscar juegos..." onkeyup="buscar()">
+</div>
+</header>
+
+<div class="hero">
+<h1>Descubre mundos legendarios</h1>
+<p>Catálogo estilo Steam cyberpunk</p>
 </div>
 
-</header><section class="hero">
-    <h1>Descubre mundos legendarios</h1>
-    <p>Una plataforma para jugadores que buscan experiencias épicas</p><div class="buttons">
-    <button class="btn primary">Explorar catálogo</button>
-    <button class="btn secondary">Ver ofertas</button>
+<div class="catalogo" id="catalogo">
+
+<div class="game" data-nombre="elden ring">
+<h3>Elden Ring</h3>
+<p class="oferta">RPG legendario</p>
 </div>
 
-</section><section class="featured">
-    <div class="game-card">
-        <img src="https://images.unsplash.com/photo-1608889175639-5c1c1d0f1f3c" alt="Elden Ring Style Game" />
-        <div class="tag">RPG LEGENDARIO</div>
-        <h2>Elden Ring - Shadow Realm</h2>
-        <p>Explora un mundo oscuro lleno de misterio, poder y leyendas olvidadas.</p>
-    </div>
-</section></body>
+<div class="game" data-nombre="cyberpunk">
+<h3>Cyberpunk 2077</h3>
+<p class="oferta">Futuro oscuro</p>
+</div>
+
+<div class="game" data-nombre="gta">
+<h3>GTA V</h3>
+<p class="oferta">Mundo abierto</p>
+</div>
+
+</div>
+
+<script>
+function buscar() {
+    let input = document.getElementById("buscador").value.toLowerCase();
+    let juegos = document.querySelectorAll(".game");
+
+    juegos.forEach(juego => {
+        let nombre = juego.getAttribute("data-nombre");
+        if (nombre.includes(input)) {
+            juego.style.display = "block";
+        } else {
+            juego.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
 </html>
