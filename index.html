@@ -1,116 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anonymous Gaming</title>
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0d0d14;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anonymous Gaming</title>
 
-        header h1 {
-            color: #ff0055;
-            margin-bottom: 20px;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
 
-        /* DISEÑO DEL BUSCADOR */
-        .barra-busqueda {
-            margin-bottom: 30px;
-        }
+body{
+background: radial-gradient(circle at top, #0a0a0a, #000);
+color:white;
+overflow-x:hidden;
+}
 
-        .barra-busqueda input {
-            padding: 10px 15px;
-            width: 80%;
-            max-width: 400px;
-            border-radius: 20px;
-            border: 2px solid #ff0055;
-            background: #161622;
-            color: white;
-            font-size: 16px;
-            outline: none;
-        }
+/* NAVBAR */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:rgba(0,0,0,0.6);
+backdrop-filter: blur(10px);
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+border-bottom:1px solid rgba(0,255,255,0.2);
+}
 
-        /* CONTENEDOR DE LOS JUEGOS */
-        .contenedor-juegos {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#00fff2;
+letter-spacing:2px;
+text-transform:uppercase;
+}
 
-        .tarjeta-juego {
-            background: #161622;
-            border-radius: 12px;
-            padding: 15px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-        }
+.logo span{
+color:white;
+}
 
-        .tarjeta-juego img {
-            width: 100%;
-            border-radius: 8px;
-            display: block;
-            margin-bottom: 10px;
-        }
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
 
-        .tarjeta-juego h3 {
-            margin: 10px 0 5px 0;
-            font-size: 18px;
-        }
-    </style>
+nav a:hover{
+color:#00fff2;
+text-shadow:0 0 10px #00fff2;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+background: radial-gradient(circle at center, rgba(0,255,255,0.08), transparent);
+}
+
+.hero h1{
+font-size:60px;
+color:#00fff2;
+text-shadow:0 0 20px #00fff2;
+}
+
+.hero p{
+margin-top:15px;
+font-size:18px;
+color:#ccc;
+max-width:600px;
+}
+
+.btn{
+margin-top:25px;
+padding:12px 25px;
+background:#00fff2;
+border:none;
+color:black;
+font-weight:bold;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+}
+
+.btn:hover{
+box-shadow:0 0 20px #00fff2;
+transform:scale(1.05);
+}
+
+/* SECCIONES */
+.section{
+padding:80px 50px;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border:1px solid rgba(0,255,255,0.2);
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px rgba(0,255,255,0.3);
+}
+
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid rgba(0,255,255,0.2);
+color:#777;
+}
+</style>
+
 </head>
 <body>
 
-    <header>
-        <h1>Anonymous Gaming</h1>
-    </header>
+<header>
+  <div class="logo">ANONYMOUS <span>GAMING</span></div>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Juegos</a>
+    <a href="#">Ofertas</a>
+    <a href="#">Soporte</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
 
-    <div class="barra-busqueda">
-        <input type="text" id="buscador" onkeyup="buscarJuego()" placeholder="Buscar juego...">
-    </div>
+<section class="hero">
+  <h1>EL FUTURO DEL GAMING</h1>
+  <p>Compra juegos, descubre ofertas exclusivas y entra al mundo competitivo con estilo futurista.</p>
+  <button class="btn">Explorar ahora</button>
+</section>
 
-    <div class="contenedor-juegos">
-        
-        <div class="tarjeta-juego" data-nombre="elden ring">
-            <img src="https://i.imgur.com/vHtwY3m.png" alt="Elden Ring">
-            <h3>Elden Ring</h3>
-        </div>
+<section class="section">
+  <h2>Juegos Destacados</h2>
 
-        <div class="tarjeta-juego" data-nombre="cyberpunk 2077">
-            <img src="https://i.imgur.com/Z4w2fW3.png" alt="Cyberpunk 2077">
-            <h3>Cyberpunk 2077</h3>
-        </div>
+  <div class="cards">
+    <div class="card">Juego 1</div>
+    <div class="card">Juego 2</div>
+    <div class="card">Juego 3</div>
+    <div class="card">Juego 4</div>
+  </div>
+</section>
 
-        <div class="tarjeta-juego" data-nombre="gta v grand theft auto">
-            <img src="https://i.imgur.com/6Xw6Osn.png" alt="GTA V">
-            <h3>Grand Theft Auto V</h3>
-        </div>
+<section class="section">
+  <h2>Ofertas</h2>
+  <div class="cards">
+    <div class="card">-50% FPS Pack</div>
+    <div class="card">-70% Battle Royale</div>
+    <div class="card">-40% RPG Bundle</div>
+  </div>
+</section>
 
-    </div>
-
-    <script>
-        function buscarJuego() {
-            let input = document.getElementById('buscador').value.toLowerCase();
-            let tarjetas = document.getElementsByClassName('tarjeta-juego');
-            
-            for (let i = 0; i < tarjetas.length; i++) {
-                let nombreJuego = tarjetas[i].getAttribute('data-nombre');
-                if (nombreJuego.includes(input)) {
-                    tarjetas[i].style.display = "block";
-                } else {
-                    tarjetas[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+<footer>
+  © 2026 Anonymous Gaming - Todos los derechos reservados
+</footer>
 
 </body>
 </html>
