@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>SI VES ESTO, LA WEB FUNCIONA</h1>
-
-<img src="https://picsum.photos/400/300">
-
-</body>
-</html>
+<img src="https://source.unsplash.com/400x300/?elden-ring" alt="Elden Ring">
+<img src="https://source.unsplash.com/400x300/?cyberpunk,city" alt="Cyberpunk 2077">
+<img src="https://source.unsplash.com/400x300/?gta,car,city" alt="GTA V">
