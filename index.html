@@ -223,6 +223,35 @@ footer{
   <div class="logo">ANONYMOUS <span>GAMING</span></div>
 <div class="catalogo">
 
+<!-- PEGAS AQUÍ EL BLOQUE -->
+<div class="catalogo">
+
+  <div class="game" data-nombre="elden ring">
+    <img src="https://source.unsplash.com/400x300/?elden-ring">
+    <h3>Elden Ring</h3>
+  </div>
+
+  <div class="game" data-nombre="gta v">
+    <img src="https://source.unsplash.com/400x300/?gta,city">
+    <h3>GTA V</h3>
+  </div>
+
+</div>
+
+<script>
+function buscar(){
+    let input = document.getElementById("buscador").value.toLowerCase();
+    let juegos = document.querySelectorAll(".game");
+
+    juegos.forEach(j => {
+        let nombre = j.getAttribute("data-nombre");
+        j.style.display = nombre.includes(input) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
   <div class="game" data-nombre="elden ring">
     <img src="https://source.unsplash.com/400x300/?elden-ring">
     <h3>Elden Ring</h3>
