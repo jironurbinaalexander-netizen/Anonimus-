@@ -1,112 +1,188 @@
-<body>
-<a href="#inicio">Inicio</a>
-<a href="#juegos">Juegos</a>
-<a href="#contacto">Contacto</a>
-<!-- update --><!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anonimus Games</title>
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anonymous Gaming</title>
 <style>
-a{
-color:white;
-text-decoration:none;
-margin:15px;
-font-size:20px;
-font-weight:bold;
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
+    }body{
+    background: radial-gradient(circle at top, #1a1a2e, #0d0d14);
+    color:white;
+    overflow-x:hidden;
 }
 
-a:hover{
-color:#00ff88;
-}  
-body{
-background:#0f0f0f;
-color:white;
-font-family:Arial;
-text-align:center;
-margin:0;
+/* particles */
+.particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation: move 20s linear infinite;
+    z-index:0;
 }
 
+@keyframes move{
+    from{transform:translateY(0px)}
+    to{transform:translateY(-200px)}
+}
+
+/* NAV */
 header{
-padding:30px;
-background:#151515;
-font-size:30px;
-font-weight:bold;
-color:#00ff88;
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    z-index:10;
 }
 
+.logo{
+    font-size:16px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#b300ff;
+}
+
+nav a{
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+    font-size:14px;
+    opacity:0.8;
+}
+
+nav a:hover{
+    opacity:1;
+    color:#00e5ff;
+}
+
+/* search */
+.search{
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,0.08);
+    padding:6px 10px;
+    border-radius:8px;
+}
+
+.search input{
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    margin-left:8px;
+}
+
+/* HERO */
 .hero{
-padding:60px 20px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    z-index:1;
+    padding:20px;
 }
 
-button{
-background:#00ff88;
-border:none;
-padding:15px 30px;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
+.hero h1{
+    font-size:48px;
+    color:#ffffff;
 }
 
-.games{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-padding:30px;
+.hero p{
+    opacity:0.7;
+    margin-top:10px;
 }
 
-.card{
-background:#1c1c1c;
-padding:20px;
-border-radius:15px;
+.buttons{
+    margin-top:20px;
 }
 
-img{
-width:100%;
-border-radius:10px;
+.btn{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    cursor:pointer;
+    border-radius:8px;
+    font-weight:bold;
 }
+
+.primary{
+    background:#b300ff;
+    color:white;
+}
+
+.secondary{
+    background:#00e5ff;
+    color:black;
+}
+
+/* FEATURED */
+.featured{
+    padding:60px 20px;
+    position:relative;
+    z-index:1;
+}
+
+.game-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:10px;
+    padding:20px;
+    max-width:600px;
+    margin:auto;
+    text-align:left;
+}
+
+.game-card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.tag{
+    color:#00e5ff;
+    font-size:12px;
+}
+
 </style>
 </head>
+<body><div class="particles"></div><header>
+    <div class="logo">AG</div><nav>
+    <a href="#">Inicio</a>
+    <a href="#">Juegos</a>
+    <a href="#">Ofertas</a>
+    <a href="#">Contacto</a>
+</nav>
 
-<body>
-
-<header>
-ANONIMUS GAMES
-</header>
-
-<section class="hero">
-<h1>Tu tienda gaming online</h1>
-<p>Compra juegos, gift cards y cuentas gaming</p>
-
-<button onclick="window.location.href='https://wa.me/'">
-Comprar ahora
-</button>
-</section>
-
-<section class="games">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
-<h2>EA FC 26</h2>
-<p>$45</p>
+<div class="search">
+    🔍 <input type="text" placeholder="Buscar juegos..." />
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
-<h2>Call Of Duty</h2>
-<p>$60</p>
+</header><section class="hero">
+    <h1>Descubre mundos legendarios</h1>
+    <p>Una plataforma para jugadores que buscan experiencias épicas</p><div class="buttons">
+    <button class="btn primary">Explorar catálogo</button>
+    <button class="btn secondary">Ver ofertas</button>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop">
-<h2>GTA V</h2>
-<p>$35</p>
-</div>
-
-</section>
-
-</body>
+</section><section class="featured">
+    <div class="game-card">
+        <img src="https://images.unsplash.com/photo-1608889175639-5c1c1d0f1f3c" alt="Elden Ring Style Game" />
+        <div class="tag">RPG LEGENDARIO</div>
+        <h2>Elden Ring - Shadow Realm</h2>
+        <p>Explora un mundo oscuro lleno de misterio, poder y leyendas olvidadas.</p>
+    </div>
+</section></body>
 </html>
