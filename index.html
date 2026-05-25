@@ -16,22 +16,54 @@
         }
 
         header h1 {
-            color: #ff0055; /* Un toque de color para el título */
+            color: #ff0055;
+            margin-bottom: 20px;
+        }
+
+        /* DISEÑO DEL BUSCADOR */
+        .barra-busqueda {
             margin-bottom: 30px;
         }
 
+        .barra-busqueda input {
+            padding: 10px 15px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 20px;
+            border: 2px solid #ff0055;
+            background: #161622;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        /* CONTENEDOR DE LOS JUEGOS */
         .contenedor-juegos {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
-        .contenedor-juegos img {
+        .tarjeta-juego {
+            background: #161622;
+            border-radius: 12px;
+            padding: 15px;
             width: 90%;
             max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
+
+        .tarjeta-juego img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta-juego h3 {
+            margin: 10px 0 5px 0;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -41,15 +73,47 @@
         <h1>Anonymous Gaming</h1>
     </header>
 
-    <div class="contenedor-juegos">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/a34v7vTIs13g963pSg78EnjL.png" alt="Elden Ring">
-
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202111/3013/mof7wSOfp1b8wI8Xf86G11fO.png" alt="Cyberpunk 2077">
-
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202202/2823/5G6AnE1vMst7B6LInwWdZAt6.png" alt="GTA V">
+    <div class="barra-busqueda">
+        <input type="text" id="buscador" onkeyup="buscarJuego()" placeholder="Buscar juego...">
     </div>
+
+    <div class="contenedor-juegos">
+        
+        <div class="tarjeta-juego" data-nombre="elden ring">
+            <img src="https://i.imgur.com/vHtwY3m.png" alt="Elden Ring">
+            <h3>Elden Ring</h3>
+        </div>
+
+        <div class="tarjeta-juego" data-nombre="cyberpunk 2077">
+            <img src="https://i.imgur.com/Z4w2fW3.png" alt="Cyberpunk 2077">
+            <h3>Cyberpunk 2077</h3>
+        </div>
+
+        <div class="tarjeta-juego" data-nombre="gta v grand theft auto">
+            <img src="https://i.imgur.com/6Xw6Osn.png" alt="GTA V">
+            <h3>Grand Theft Auto V</h3>
+        </div>
+
+    </div>
+
+    <script>
+        function buscarJuego() {
+            let input = document.getElementById('buscador').value.toLowerCase();
+            let tarjetas = document.getElementsByClassName('tarjeta-juego');
+            
+            for (let i = 0; i < tarjetas.length; i++) {
+                let nombreJuego = tarjetas[i].getAttribute('data-nombre');
+                if (nombreJuego.includes(input)) {
+                    tarjetas[i].style.display = "block";
+                } else {
+                    tarjetas[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
+
 
 
