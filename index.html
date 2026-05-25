@@ -1,149 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anonymous Gaming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Gaming</title>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0d0d14;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #0d0d14;
-    color: white;
-}
+        header h1 {
+            color: #ff0055; /* Un toque de color para el título */
+            margin-bottom: 30px;
+        }
 
-/* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background: rgba(0,0,0,0.6);
-    position: sticky;
-    top: 0;
-}
+        .contenedor-juegos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
 
-.logo {
-    color: #b300ff;
-    font-weight: bold;
-}
-
-/* SEARCH */
-.search {
-    display: flex;
-    align-items: center;
-    background: #1a1a2e;
-    padding: 5px 10px;
-    border-radius: 8px;
-}
-
-.search input {
-    background: none;
-    border: none;
-    color: white;
-    outline: none;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.hero h1 {
-    font-size: 40px;
-}
-
-/* CATÁLOGO */
-.catalogo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.game {
-    background: #141424;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.3s;
-    cursor: pointer;
-    color: white;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-.game img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-}
-
-.game:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #b300ff;
-}
-/* OFERTA */
-.oferta {
-    color: #00e5ff;
-    font-size: 12px;
-}
-</style>
+        .contenedor-juegos img {
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<div class="logo">Anonymous Gaming</div>
+    <header>
+        <h1>Anonymous Gaming</h1>
+    </header>
 
-<div class="search">
-🔍 <input type="text" id="buscador" placeholder="Buscar juegos..." onkeyup="buscar()">
-</div>
-</header>
+    <div class="contenedor-juegos">
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/a34v7vTIs13g963pSg78EnjL.png" alt="Elden Ring">
 
-<div class="hero">
-<h1>Descubre mundos legendarios</h1>
-<p>Catálogo estilo Steam cyberpunk</p>
-</div>
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202111/3013/mof7wSOfp1b8wI8Xf86G11fO.png" alt="Cyberpunk 2077">
 
-<div class="catalogo" id="catalogo">
-
-<div class="game" data-nombre="elden ring">
-    <img src="images/elden.jpg" alt="Elden Ring">
-    <h3>Elden Ring</h3>
-    <p class="oferta">RPG legendario</p>
-</div>
-
-<div class="game" data-nombre="cyberpunk">
-    <img src="images/cyberpunk.jpg" alt="Cyberpunk 2077">
-    <h3>Cyberpunk 2077</h3>
-    <p class="oferta">Futuro oscuro</p>
-</div>
-
-<div class="game" data-nombre="gta">
-    <img src="images/gta.jpg" alt="GTA V">
-    <h3>GTA V</h3>
-    <p class="oferta">Mundo abierto</p>
-</div>
-
-</div>
-
-<script>
-function buscar() {
-    let input = document.getElementById("buscador").value.toLowerCase();
-    let juegos = document.querySelectorAll(".game");
-
-    juegos.forEach(juego => {
-        let nombre = juego.getAttribute("data-nombre");
-        if (nombre.includes(input)) {
-            juego.style.display = "block";
-        } else {
-            juego.style.display = "none";
-        }
-    });
-}
-</script>
+        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202202/2823/5G6AnE1vMst7B6LInwWdZAt6.png" alt="GTA V">
+    </div>
 
 </body>
 </html>
+
 
