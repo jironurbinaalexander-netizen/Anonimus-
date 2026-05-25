@@ -13,12 +13,56 @@ box-sizing:border-box;
 font-family:Arial, sans-serif;
 }
 
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(20, 20, 36, 0.8);
+    border: 1px solid #b300ff;
+    padding: 6px 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(179, 0, 255, 0.3);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 160px;
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+}
 body{
 background: radial-gradient(circle at top, #0a0a0a, #000);
 color:white;
 overflow-x:hidden;
 }
 
+<!-- TODO TU HTML ARRIBA -->
+
+<div class="catalogo">
+  ...
+</div>
+
+<!-- AQUÍ ABAJO VA EL JS -->
+<script>
+function buscar() {
+    let input = document.getElementById("buscador").value.toLowerCase();
+    let juegos = document.querySelectorAll(".game");
+
+    juegos.forEach(juego => {
+        let nombre = (juego.getAttribute("data-nombre") || "").toLowerCase();
+
+        juego.style.display = nombre.includes(input) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
 /* NAVBAR */
 header{
 display:flex;
@@ -148,6 +192,9 @@ color:#777;
   </nav>
 </header>
 
+<div class="search-box">
+    <input type="text" id="buscador" placeholder="Buscar juegos..." onkeyup="buscar()">
+</div> 
 <section class="hero">
   <h1>EL FUTURO DEL GAMING</h1>
   <p>Compra juegos, descubre ofertas exclusivas y entra al mundo competitivo con estilo futurista.</p>
