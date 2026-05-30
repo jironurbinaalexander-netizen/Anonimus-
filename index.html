@@ -449,12 +449,12 @@ Shooter / FPS
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/mtqr46W5/IMG-20260529-190214.jpg')"></div>
 <h3>Valorant</h3>
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/JGgh8dCd/IMG-20260529-190612.jpg')"></div>
 <h3>Counter Strike 2</h3>
 </div>
 
@@ -480,12 +480,12 @@ Mundo Abierto
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/GHNpRSng/IMG-20260529-190913.jpg')"></div>
 <h3>Cyberpunk 2077</h3>
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/0b3NvH1W/IMG-20260529-191202.jpg')"></div>
 <h3>Red Dead Redemption 2</h3>
 </div>
 
@@ -527,32 +527,32 @@ Más Categorías
 <div class="grid">
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/RN80mbxP/IMG-20260529-214341.jpg')"></div>
 <h3>Resident Evil</h3>
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/zVMfNPY7/IMG-20260529-214547.jpg')"></div>
 <h3>God Of War</h3>
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/CztK06pJ/IMG-20260529-214853.jpg')"></div>
 <h3>League Of Legends</h3>
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/2VJ5YXNw/IMG-20260529-215229.jpg')"></div>
 <h3>Dota 2</h3>
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/HVKLmP1B/IMG-20260529-215603.jpg')"></div>
 <h3>FIFA</h3>
 </div>
 
 <div class="card">
-<div class="img"></div>
+<div class="img" style="background-image:url('https://i.postimg.cc/SJ5K4tbf/IMG-20260529-215802.jpg')"></div>
 <h3>Fortnite</h3>
 </div>
 
@@ -562,69 +562,4 @@ Más Categorías
 
 <!-- TODAS LAS CATEGORÍAS -->
 
-<div id="all-categories" class="section-title">
-Todas Las Categorías
-</div>
 
-<div class="future-grid">
-
-<div class="future-card">Acción</div>
-<div class="future-card">Aventura</div>
-<div class="future-card">RPG</div>
-<div class="future-card">Shooter</div>
-<div class="future-card">Terror</div>
-<div class="future-card">Sandbox</div>
-<div class="future-card">Mundo Abierto</div>
-<div class="future-card">MMO</div>
-<div class="future-card">MOBA</div>
-<div class="future-card">Deportes</div>
-<div class="future-card">Carreras</div>
-<div class="future-card">Indie</div>
-<div class="future-card">Supervivencia</div>
-<div class="future-card">Battle Royale</div>
-<div class="future-card">Estrategia</div>
-<div class="future-card">Simulación</div>
-<div class="future-card">Lucha</div>
-<div class="future-card">Plataformas</div>
-<div class="future-card">Roguelike</div>
-<div class="future-card">Hack & Slash</div>
-<div class="future-card">VR</div>
-
-</div>
-
-<script>
-
-const searchInput =
-document.getElementById("search");
-
-searchInput.addEventListener(
-"keyup",
-function(){
-
-let value =
-this.value.toLowerCase();
-
-let cards =
-document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-
-let text =
-card.innerText.toLowerCase();
-
-if(text.includes(value)){
-card.style.display="";
-}
-else{
-card.style.display="none";
-}
-
-});
-
-}
-);
-
-</script>
-
-</body>
-</html>
