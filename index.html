@@ -1,319 +1,630 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neon Gaming Store Ultimate</title>  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body{
-      background:#07070a;
-      color:white;
-      min-height:100vh;
-      overflow-x:hidden;
-    }
+<title>NEON GAMING</title>
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 25px;
-      background:#0d0d12;
-      border-bottom:1px solid #1a1a25;
-    }
+<style>
 
-    .logo{
-      font-weight:bold;
-      letter-spacing:2px;
-      color:#b44cff;
-    }
-
-    nav a{
-      margin:0 10px;
-      color:#aaa;
-      text-decoration:none;
-      font-size:14px;
-    }
-
-    nav a:hover{
-      color:#b44cff;
-    }
-
-    .search{
-      background:#111;
-      border:1px solid #222;
-      padding:6px 10px;
-      border-radius:8px;
-      color:white;
-      outline:none;
-    }
-
-    .hero{
-      height:420px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:30px;
-      background:linear-gradient(120deg,#0a0a0f,#111122);
-      border-bottom:1px solid #1a1a25;
-    }
-
-    .hero-text{
-      max-width:40%;
-    }
-
-    .hero-text h1{
-      font-size:42px;
-    }
-
-    .hero-text p{
-      margin-top:10px;
-      color:#aaa;
-    }
-
-    .btn{
-      margin-top:15px;
-      display:inline-block;
-      padding:10px 15px;
-      background:#b44cff;
-      color:white;
-      border-radius:8px;
-      text-decoration:none;
-    }
-
-    .hero-image{
-      width:55%;
-      height:100%;
-      background:#111;
-      border-radius:12px;
-      border:1px solid #222;
-      background-size:cover;
-      background-position:center;
-    }
-
-    .section{
-      padding:20px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:15px;
-    }
-
-    .card{
-      background:#0f0f16;
-      border:1px solid #1f1f2e;
-      border-radius:12px;
-      overflow:hidden;
-      transition:.3s;
-      cursor:pointer;
-    }
-
-    .card:hover{
-      transform:scale(1.03);
-      border-color:#b44cff;
-    }
-
-    .img{
-      height:150px;
-      background:#111;
-      background-size:cover;
-      background-position:center;
-    }
-
-    .card h3{
-      padding:10px;
-      font-size:14px;
-    }
-
-    .hint{
-      color:#666;
-      font-size:12px;
-      padding:0 10px 10px;
-    }
-
-    .category{
-      padding:10px 20px;
-      color:#b44cff;
-      font-weight:bold;
-    }
-  </style></head><body><header>
-  <div class="logo">NEON GAMING</div>
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Juegos</a>
-    <a href="#">Noticias</a>
-    <a href="#">Comunidad</a>
-  </nav>
-  <input class="search" id="search" placeholder="Buscar juegos o géneros..." onkeyup="filterGames()" />
-</header><section class="hero">
-  <div class="hero-text">
-    <h1>Juego Destacado</h1>
-    <p>Explora los mejores juegos AAA y toda la biblioteca completa estilo Steam.</p>
-    <a class="btn" href="#">Ver detalles</a>
-  </div>
-  <div class="hero-image" style="background-image:url('https://i.postimg.cc/XvYgF6fx/IMG-20260525-120922.jpg'); background-size:cover; background-position:center;"></div>
-</section><div class="category">Juegos AAA destacados</div><section class="section">
-  <div class="grid" id="gamesGrid"><div class="card" data-name="elden ring rpg souls">
-  <div class="img" style="background-image:url('https://i.postimg.cc/kgtgMfhG/IMG-20260527-234502.jpg')"></div>
-  <h3>Elden Ring</h3>
-</div>
-
-<div class="card" data-name="gta v action mundo abierto">
-  <div class="img" style="background-image:url('https://i.postimg.cc/w38bXxgz/IMG-20260527-232614.jpg')"></div>
-  <h3>GTA V</h3>
-</div>
-
-<div class="card" data-name="call of duty fps shooter">
-  <div class="img" style="background-image:url('https://i.postimg.cc/ydJHnd4L/IMG-20260527-233517.jpg')"></div>
-  <h3>Call of Duty</h3>
-</div>
-
-<div class="card" data-name="minecraft sandbox survival">
-  <div class="img" style="background-image:url('https://i.postimg.cc/RZXxBfvq/IMG-20260527-234040.jpg')"></div>
-  <h3>Minecraft</h3>
-</div>
-
-  </div>
-</section><div class="category">Catálogo completo (demo expandible)</div><section class="section">
-  <div class="grid" id="allGames"><div class="card" data-name="fifa sports futbol">
-  <div class="img"></div>
-  <h3>FIFA</h3>
-</div>
-
-<div class="card" data-name="fortnite battle royale">
-  <div class="img"></div>
-  <h3>Fortnite</h3>
-</div>
-
-<div class="card" data-name="valorant fps tactical">
-  <div class="img"></div>
-  <h3>Valorant</h3>
-</div>
-
-<div class="card" data-name="resident evil horror">
-  <div class="img"></div>
-  <h3>Resident Evil</h3>
-</div>
-
-  </div>
-</section><script>
-
-// ============================
-// BUSCADOR
-// ============================
-function filterGames(){
-  let input = document.getElementById("search").value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-    let name = card.getAttribute("data-name");
-
-    if(name.includes(input)){
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-// ============================
-// BASE DE DATOS DEMO
-// ============================
-const games = [
-  {name:"Elden Ring", genre:"RPG Souls"},
-  {name:"GTA V", genre:"Mundo Abierto"},
-  {name:"Cyberpunk 2077", genre:"Sci-Fi RPG"},
-  {name:"Minecraft", genre:"Sandbox"},
-  {name:"Call of Duty", genre:"Shooter"},
-  {name:"Resident Evil", genre:"Horror"},
-  {name:"Valorant", genre:"FPS"},
-  {name:"Fortnite", genre:"Battle Royale"},
-  {name:"FIFA", genre:"Deportes"},
-  {name:"Red Dead Redemption 2", genre:"Western"},
-  {name:"God of War", genre:"Acción"},
-  {name:"The Witcher 3", genre:"Fantasy RPG"},
-  {name:"League of Legends", genre:"MOBA"},
-  {name:"Dota 2", genre:"MOBA"},
-  {name:"Counter Strike 2", genre:"Shooter"}
-];
-
-// ============================
-// GENERADOR AUTOMÁTICO
-// ============================
-const allGames = document.getElementById("allGames");
-
-for(let game of games){
-
-  let card = document.createElement("div");
-  card.className = "card";
-  card.setAttribute("data-name", `${game.name.toLowerCase()} ${game.genre.toLowerCase()}`);
-
-  card.innerHTML = `
-    <div class="img"></div>
-    <h3>${game.name}</h3>
-    <div class="hint">${game.genre}</div>
-  `;
-
-  allGames.appendChild(card);
+body{
+background:#07070a;
+color:white;
+overflow-x:hidden;
 }
 
-// ============================
-// SISTEMA FUTURO API
-// ============================
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
+background:#0d0d12;
+border-bottom:1px solid #1a1a25;
+position:sticky;
+top:0;
+z-index:100;
+}
 
-/*
+.logo{
+font-size:22px;
+font-weight:bold;
+letter-spacing:2px;
+color:#b44cff;
+}
 
-AQUÍ MÁS ADELANTE PODRÁS CONECTAR:
+nav a{
+margin:0 10px;
+color:#aaa;
+text-decoration:none;
+}
 
-- RAWG API
-- IGDB API
-- STEAM API
+nav a:hover{
+color:#b44cff;
+}
 
-para cargar automáticamente miles de juegos reales.
+.search{
+background:#111;
+border:1px solid #222;
+padding:8px 12px;
+border-radius:8px;
+color:white;
+outline:none;
+}
 
-Ejemplo:
+.hero{
+height:420px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:30px;
+background:linear-gradient(120deg,#0a0a0f,#111122);
+border-bottom:1px solid #1a1a25;
+}
 
-fetch("API_URL")
-.then(res => res.json())
-.then(data => {
-   console.log(data)
-})
+.hero-text{
+max-width:40%;
+}
 
-*/
+.hero-text h1{
+font-size:42px;
+margin-bottom:15px;
+}
 
-// ============================
-// HERO IMAGE
-// ============================
+.hero-text p{
+color:#aaa;
+line-height:1.5;
+}
 
-/*
-
-PARA PONER LA IMAGEN PRINCIPAL:
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 18px;
+background:#b44cff;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
 
 .hero-image{
- background-image:url("AQUÍ_TU_LINK");
+width:55%;
+height:100%;
+background:#111;
+border-radius:15px;
+border:1px solid #222;
+background-size:cover;
+background-position:center;
 }
 
-*/
+.section-title{
+padding:20px;
+font-size:22px;
+font-weight:bold;
+color:#b44cff;
+}
 
-// ============================
-// IMÁGENES DE JUEGOS
-// ============================
+.category-banner{
+margin:20px;
+height:320px;
+border-radius:16px;
+overflow:hidden;
+position:relative;
 
-/*
+background-image:url('https://i.postimg.cc/L8czpy4J/IMG-20260525-120922.jpg');
+background-size:cover;
+background-position:center;
 
-PARA PONER IMÁGENES:
+border:1px solid #2a2a3a;
+}
 
-<div class="img" style="background-image:url('TU_LINK')"></div>
+.category-banner::before{
+content:"";
+position:absolute;
+inset:0;
 
-*/
+background:
+linear-gradient(
+135deg,
+rgba(15,40,120,.75),
+rgba(5,5,15,.70)
+);
+}
 
-</script></body>
+.category-overlay{
+position:absolute;
+inset:0;
+z-index:2;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+padding:35px;
+}
+
+.category-overlay h2{
+font-size:38px;
+margin-bottom:15px;
+}
+
+.category-overlay p{
+max-width:500px;
+color:#ddd;
+margin-bottom:20px;
+}
+
+.btn-category{
+display:inline-block;
+width:max-content;
+padding:12px 18px;
+border-radius:8px;
+background:#b44cff;
+color:white;
+text-decoration:none;
+}
+
+.slider-container{
+overflow:hidden;
+padding:20px;
+}
+
+.slider{
+display:flex;
+gap:15px;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding-bottom:10px;
+}
+
+.slider::-webkit-scrollbar{
+height:8px;
+}
+
+.slider::-webkit-scrollbar-thumb{
+background:#b44cff;
+border-radius:20px;
+}
+
+.genre-card{
+min-width:250px;
+height:140px;
+
+background:#101018;
+border:1px solid #232338;
+
+border-radius:15px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.genre-card:hover{
+transform:translateY(-5px);
+border-color:#b44cff;
+}
+
+.genre-card h3{
+margin-bottom:10px;
+}
+
+.genre-card span{
+color:#888;
+font-size:13px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+padding:20px;
+}
+
+.card{
+background:#0f0f16;
+border:1px solid #1f1f2e;
+border-radius:14px;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+border-color:#b44cff;
+}
+
+.img{
+height:160px;
+background-size:cover;
+background-position:center;
+background-color:#111;
+}
+
+.card h3{
+padding:12px;
+}
+
+.more-btn{
+display:block;
+width:200px;
+margin:20px auto;
+text-align:center;
+padding:12px;
+background:#b44cff;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
+
+.category-block{
+margin-top:30px;
+}
+
+.future-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+padding:20px;
+}
+
+.future-card{
+background:#101018;
+padding:20px;
+text-align:center;
+border-radius:12px;
+border:1px solid #232338;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+NEON GAMING
+</div>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#">Juegos</a>
+<a href="#">Noticias</a>
+<a href="#">Comunidad</a>
+</nav>
+
+<input
+class="search"
+placeholder="Buscar juegos..."
+id="search"
+>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Juego Destacado</h1>
+
+<p>
+Añade aquí tu próxima portada principal.
+Esta sección está preparada para que cambies
+la imagen cuando quieras.
+</p>
+
+<a href="#" class="btn">
+Ver Detalles
+</a>
+
+</div>
+
+<div class="hero-image">
+
+</div>
+
+</section>
+
+<section>
+
+<div class="category-banner">
+
+<div class="category-overlay">
+
+<h2>EXPLORAR POR CATEGORÍAS</h2>
+
+<p>
+Explora todos los géneros disponibles
+y descubre nuevos juegos.
+</p>
+
+<a href="#all-categories" class="btn-category">
+VER TODO
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="section-title">
+Explorar Categorías
+</div>
+
+<div class="slider-container">
+
+<div class="slider">
+
+<div class="genre-card">
+<h3>RPG</h3>
+<span>Elden Ring</span>
+</div>
+
+<div class="genre-card">
+<h3>Shooter</h3>
+<span>Call of Duty</span>
+</div>
+
+<div class="genre-card">
+<h3>Mundo Abierto</h3>
+<span>GTA V</span>
+</div>
+
+<div class="genre-card">
+<h3>Sandbox</h3>
+<span>Minecraft</span>
+</div>
+
+<div class="genre-card">
+<h3>Terror</h3>
+<span>Resident Evil</span>
+</div>
+
+<div class="genre-card">
+<h3>MOBA</h3>
+<span>LoL / Dota 2</span>
+</div>
+
+<div class="genre-card">
+<h3>Deportes</h3>
+<span>FIFA</span>
+</div>
+
+<div class="genre-card">
+<h3>Battle Royale</h3>
+<span>Fortnite</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- RPG -->
+
+<div class="category-block">
+
+<div class="section-title">
+RPG
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="img" style="background-image:url('https://i.postimg.cc/kgtgMfhG/IMG-20260527-234502.jpg')"></div>
+<h3>Elden Ring</h3>
+</div>
+
+</div>
+
+<a href="#" class="more-btn">Ver Más RPG</a>
+
+</div>
+
+<!-- SHOOTER -->
+
+<div class="category-block">
+
+<div class="section-title">
+Shooter / FPS
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="img" style="background-image:url('https://i.postimg.cc/ydJHnd4L/IMG-20260527-233517.jpg')"></div>
+<h3>Call Of Duty</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>Valorant</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>Counter Strike 2</h3>
+</div>
+
+</div>
+
+<a href="#" class="more-btn">Ver Más Shooter</a>
+
+</div>
+
+<!-- MUNDO ABIERTO -->
+
+<div class="category-block">
+
+<div class="section-title">
+Mundo Abierto
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="img" style="background-image:url('https://i.postimg.cc/w38bXxgz/IMG-20260527-232614.jpg')"></div>
+<h3>GTA V</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>Cyberpunk 2077</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>Red Dead Redemption 2</h3>
+</div>
+
+</div>
+
+<a href="#" class="more-btn">Ver Más Mundo Abierto</a>
+
+</div>
+
+<!-- SANDBOX -->
+
+<div class="category-block">
+
+<div class="section-title">
+Sandbox
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="img" style="background-image:url('https://i.postimg.cc/RZXxBfvq/IMG-20260527-234040.jpg')"></div>
+<h3>Minecraft</h3>
+</div>
+
+</div>
+
+<a href="#" class="more-btn">Ver Más Sandbox</a>
+
+</div>
+
+<!-- OTRAS CATEGORÍAS -->
+
+<div class="category-block">
+
+<div class="section-title">
+Más Categorías
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="img"></div>
+<h3>Resident Evil</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>God Of War</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>League Of Legends</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>Dota 2</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>FIFA</h3>
+</div>
+
+<div class="card">
+<div class="img"></div>
+<h3>Fortnite</h3>
+</div>
+
+</div>
+
+</div>
+
+<!-- TODAS LAS CATEGORÍAS -->
+
+<div id="all-categories" class="section-title">
+Todas Las Categorías
+</div>
+
+<div class="future-grid">
+
+<div class="future-card">Acción</div>
+<div class="future-card">Aventura</div>
+<div class="future-card">RPG</div>
+<div class="future-card">Shooter</div>
+<div class="future-card">Terror</div>
+<div class="future-card">Sandbox</div>
+<div class="future-card">Mundo Abierto</div>
+<div class="future-card">MMO</div>
+<div class="future-card">MOBA</div>
+<div class="future-card">Deportes</div>
+<div class="future-card">Carreras</div>
+<div class="future-card">Indie</div>
+<div class="future-card">Supervivencia</div>
+<div class="future-card">Battle Royale</div>
+<div class="future-card">Estrategia</div>
+<div class="future-card">Simulación</div>
+<div class="future-card">Lucha</div>
+<div class="future-card">Plataformas</div>
+<div class="future-card">Roguelike</div>
+<div class="future-card">Hack & Slash</div>
+<div class="future-card">VR</div>
+
+</div>
+
+<script>
+
+const searchInput =
+document.getElementById("search");
+
+searchInput.addEventListener(
+"keyup",
+function(){
+
+let value =
+this.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let text =
+card.innerText.toLowerCase();
+
+if(text.includes(value)){
+card.style.display="";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+}
+);
+
+</script>
+
+</body>
 </html>
-      
-  
