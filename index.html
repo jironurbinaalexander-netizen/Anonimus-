@@ -412,27 +412,6 @@ Explorar Categorías
 
 </div>
 
-<!-- RPG -->
-
-<div class="category-block">
-
-<div class="section-title">
-RPG
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="img" style="background-image:url('https://i.postimg.cc/kgtgMfhG/IMG-20260527-234502.jpg')"></div>
-<h3>Elden Ring</h3>
-</div>
-
-</div>
-
-<a href="#" class="more-btn">Ver Más RPG</a>
-
-</div>
-
 <!-- SHOOTER -->
 
 <div class="category-block">
@@ -442,11 +421,6 @@ Shooter / FPS
 </div>
 
 <div class="grid">
-
-<div class="card">
-<div class="img" style="background-image:url('https://i.postimg.cc/ydJHnd4L/IMG-20260527-233517.jpg')"></div>
-<h3>Call Of Duty</h3>
-</div>
 
 <div class="card">
 <div class="img" style="background-image:url('https://i.postimg.cc/mtqr46W5/IMG-20260529-190214.jpg')"></div>
@@ -459,8 +433,6 @@ Shooter / FPS
 </div>
 
 </div>
-
-<a href="#" class="more-btn">Ver Más Shooter</a>
 
 </div>
 
@@ -475,11 +447,6 @@ Mundo Abierto
 <div class="grid">
 
 <div class="card">
-<div class="img" style="background-image:url('https://i.postimg.cc/w38bXxgz/IMG-20260527-232614.jpg')"></div>
-<h3>GTA V</h3>
-</div>
-
-<div class="card">
 <div class="img" style="background-image:url('https://i.postimg.cc/GHNpRSng/IMG-20260529-190913.jpg')"></div>
 <h3>Cyberpunk 2077</h3>
 </div>
@@ -491,32 +458,9 @@ Mundo Abierto
 
 </div>
 
-<a href="#" class="more-btn">Ver Más Mundo Abierto</a>
-
 </div>
 
-<!-- SANDBOX -->
-
-<div class="category-block">
-
-<div class="section-title">
-Sandbox
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="img" style="background-image:url('https://i.postimg.cc/RZXxBfvq/IMG-20260527-234040.jpg')"></div>
-<h3>Minecraft</h3>
-</div>
-
-</div>
-
-<a href="#" class="more-btn">Ver Más Sandbox</a>
-
-</div>
-
-<!-- OTRAS CATEGORÍAS -->
+<!-- MÁS CATEGORÍAS -->
 
 <div class="category-block">
 
@@ -591,44 +535,3 @@ Todas Las Categorías
 <div class="future-card">VR</div>
 
 </div>
-
-<script>
-
-const searchInput =
-document.getElementById("search");
-
-searchInput.addEventListener(
-"keyup",
-function(){
-
-let value =
-this.value.toLowerCase();
-
-let cards =
-document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-
-let text =
-card.innerText.toLowerCase();
-
-if(text.includes(value)){
-card.style.display="";
-}
-else{
-card.style.display="none";
-}
-
-});
-
-}
-);
-
-</script>
-
-</body>
-</html>
-
-
-
-
