@@ -562,4 +562,73 @@ Más Categorías
 
 <!-- TODAS LAS CATEGORÍAS -->
 
+<div id="all-categories" class="section-title">
+Todas Las Categorías
+</div>
+
+<div class="future-grid">
+
+<div class="future-card">Acción</div>
+<div class="future-card">Aventura</div>
+<div class="future-card">RPG</div>
+<div class="future-card">Shooter</div>
+<div class="future-card">Terror</div>
+<div class="future-card">Sandbox</div>
+<div class="future-card">Mundo Abierto</div>
+<div class="future-card">MMO</div>
+<div class="future-card">MOBA</div>
+<div class="future-card">Deportes</div>
+<div class="future-card">Carreras</div>
+<div class="future-card">Indie</div>
+<div class="future-card">Supervivencia</div>
+<div class="future-card">Battle Royale</div>
+<div class="future-card">Estrategia</div>
+<div class="future-card">Simulación</div>
+<div class="future-card">Lucha</div>
+<div class="future-card">Plataformas</div>
+<div class="future-card">Roguelike</div>
+<div class="future-card">Hack & Slash</div>
+<div class="future-card">VR</div>
+
+</div>
+
+<script>
+
+const searchInput =
+document.getElementById("search");
+
+searchInput.addEventListener(
+"keyup",
+function(){
+
+let value =
+this.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let text =
+card.innerText.toLowerCase();
+
+if(text.includes(value)){
+card.style.display="";
+}
+else{
+card.style.display="none";
+}
+
+});
+
+}
+);
+
+</script>
+
+</body>
+</html>
+
+
+
 
